@@ -23,7 +23,7 @@ void add(DynammicArray *list, void *element)
         resize_array(list);
     }    
     list->list[list->size] = element;
-   // list->list[list->size + 1] = '\0';
+    list->list[list->size + 1] = '\0';
     list->size++;
 }
 
