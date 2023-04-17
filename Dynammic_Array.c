@@ -1,5 +1,5 @@
 #include "Dynammic_Array.h"
-//this is a comment
+
 DynammicArray Default_allocate(void)
 {
     return allocate(4);
