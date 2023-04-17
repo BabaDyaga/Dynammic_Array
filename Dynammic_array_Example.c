@@ -59,6 +59,7 @@ void Example_CHAR(void)
     printf("EXAMPLE...OUTPUT FOR HOW TO INSERT A SINGLE CHARACTER TO AN IDX WITHIN THE SCOPE OF THE ARRAY.\n");
     int idx = 2;
     insert(&CHAR, msg1, idx);
+    setCapacity(&CHAR);
     CHAR.size_in_bytes = CHAR.size * sizeof(char);
     printf("Capacity= %d, Length= %d, SizeWritten(Bytes)= %dbyte/s ", CHAR.capacity, CHAR.size, CHAR.size_in_bytes);
     printf("Contents= ");
@@ -96,6 +97,7 @@ void Example_INT(void)
     printf("Allocated %dbyte/s of memory.\n", test.size_in_bytes);
     int num = 6; 
     add(&test, &num);
+    setCapacity(&test);
     test.size_in_bytes = test.size * sizeof(int);
     printf("Capacity= %d, Length= %d, SizeWritten(Bytes)= %dbyte/s,", test.capacity, test.size, test.size_in_bytes);
     printf("Contents= ");
@@ -179,6 +181,7 @@ void Example_STRUCT(void)
     printf("Allocated %dbyte/s of memory.\n", STRUCT.size_in_bytes);
     add(&STRUCT, &new);
     struct person *p1 = STRUCT.list[0];
+    setCapacity(&STRUCT);
     STRUCT.size_in_bytes = STRUCT.size * sizeof(struct person);
     printf("Capacity= %i, Size= %i\n", STRUCT.capacity, STRUCT.size);
     printf("Name= %s, Age= %d, SizeWritten(byte/s)= %d.\n", p1->name, p1->age, STRUCT.size_in_bytes);
@@ -194,7 +197,8 @@ void Example_STRING(void)
     printf("Allocated %dbyte/s of memory.\n", TEST.size_in_bytes);
     add(&TEST, string1);
     add(&TEST, string2);
+    setCapacity(&TEST);
     TEST.size_in_bytes = (sizeof(char) + strlen(string2) + strlen(string1));
-    printf("SizeWritten(byte/s)= %d(byte/s), %s, %s.\n", TEST.size_in_bytes, (const char*)TEST.list[0], (const char*)TEST.list[0]);
+    printf("Capacity= %d, Size= %d, SizeWritten(byte/s)= %d(byte/s), %s, %s.\n", TEST.capacity, TEST.size, TEST.size_in_bytes, (const char*)TEST.list[0], (const char*)TEST.list[0]);
     printf("\n");
 }
