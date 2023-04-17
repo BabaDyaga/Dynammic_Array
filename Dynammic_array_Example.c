@@ -154,6 +154,7 @@ void Example_FLOAT(void)
     }
     printf("\n");
     removeEntry(&newtest, 0);
+    setCapacity(&newtest);
     newtest.size_in_bytes = newtest.size * sizeof(float);
     printf("Capacity= %d, Length= %d, SizeWritten(Bytes)= %dbyte/s ", newtest.capacity, newtest.size, newtest.size_in_bytes);
     for (int i = 0; i < newtest.size; i++)

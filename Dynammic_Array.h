@@ -26,5 +26,6 @@ void resize_array(DynammicArray *list);
 void *removeEntry(DynammicArray *list, int idx);
 void *getEntryatidx(DynammicArray *list, int idx);
 void *insert(DynammicArray *list, void *element, int idx);
+void setCapacity(DynammicArray *list);
 void free_allocatedmemory(DynammicArray *list);
 #endif

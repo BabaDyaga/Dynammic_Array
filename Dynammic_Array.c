@@ -77,6 +77,19 @@ void *insert(DynammicArray *list, void *element, int idx)
     list->size++;
 }
 
+void setCapacity(DynammicArray *list)
+{
+    void **NewArray = malloc(list->size * sizeof(void *));
+    list->size_in_bytes = list->size * sizeof(void *);
+    for(int i = 0; i < list->size; i++)
+    {
+        NewArray[i] = list->list[i];
+    }
+    free(list->list);
+    list->list = NewArray;
+    list->capacity = list->size;
+}
+
 void free_allocatedmemory(DynammicArray *list)
 {
     free(list->list);
