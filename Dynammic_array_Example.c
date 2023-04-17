@@ -10,7 +10,7 @@ void Example_FLOAT(void);
 void Example_STRUCT(void);
 void Example_STRING(void);
 
-int main(int argc, char* argv[])
+int main(void)
 {
     Example_CHAR();
     Example_INT();
